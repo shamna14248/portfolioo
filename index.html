@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fathimath Shamna - Professional Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom font for Inter and Poppins */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #2d3748; /* Darker gray for better readability */
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom Animations */
+        @keyframes slideInFromLeft {
+            0% { transform: translateX(-100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes slideInFromRight {
+            0% { transform: translateX(100%); opacity: 0; }
+            100% { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .animate-left { animation: slideInFromLeft 0.8s ease-out forwards; }
+        .animate-right { animation: slideInFromRight 0.8s ease-out forwards; }
+        .animate-fade { animation: fadeIn 1s ease-out forwards; }
+
+        /* Navigation active link styling */
+        .nav-link-active {
+            color: #6366f1; /* Tailwind indigo-500 */
+            border-bottom: 2px solid #6366f1;
+            font-weight: 600;
+        }
+
+        /* Scroll-to-top button */
+        #scrollTopBtn {
+            display: none;
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 1000;
+            background-color: #6366f1;
+            color: white;
+            padding: 0.75rem 1rem;
+            border-radius: 9999px; /* Fully rounded */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+        #scrollTopBtn:hover {
+            background-color: #4f46e5;
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="bg-white shadow-md fixed w-full z-50 py-4">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-indigo-700 hover:text-purple-700 transition duration-300">Fathimath Shamna</a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#hero" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Home</a>
+                <a href="#about" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">About</a>
+                <a href="#experience" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Experience</a>
+                <a href="#portfolio" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Portfolio</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Contact</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2 mt-2">
+            <a href="#hero" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
+            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
+            <a href="#experience" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Experience</a>
+            <a href="#portfolio" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Portfolio</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact</a>
+        </div>
+    </header>
+
+    <main class="pt-20"> <section id="hero" class="relative bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20 px-4 min-h-[calc(100vh-5rem)] flex items-center justify-center">
+            <div class="container mx-auto text-center z-10 relative">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 animate-fade" style="animation-delay: 0.2s;">
+                    Hi, I'm <span class="text-yellow-300">Fathimath Shamna</span>
+                </h1>
+                <p class="text-xl md:text-2xl mb-8 animate-fade" style="animation-delay: 0.5s;">
+                    A Data Analyst passionate about uncovering insights and driving impactful decisions.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade" style="animation-delay: 0.8s;">
+                    <a href="#portfolio" class="bg-white text-indigo-700 px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
+                        View My Work
+                    </a>
+                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-700 transition duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+            <div class="absolute inset-0 bg-pattern opacity-10"></div>
+            <svg class="absolute bottom-0 left-0 w-full h-auto text-white opacity-20" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+                <path fill="currentColor" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,176C672,160,768,160,864,170.7C960,181,1056,203,1152,192C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </section>
+
+        <section id="about" class="py-16 px-4 bg-white shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">About Me</h2>
+                <div class="flex flex-col items-center gap-10 text-center"> <div class="w-full flex flex-col items-center animate-left">
+                        <img src="Shamna.PNG" alt="Fathimath Shamna Profile" class="rounded-full w-64 h-64 object-cover shadow-xl border-4 border-indigo-200 mb-8"> <p class="mb-12 bg-indigo-50 p-5 rounded-lg shadow-inner border border-indigo-100 text-lg text-gray-700 max-w-3xl"> Hello! I'm Fathimath Shamna, a results-oriented Data Analyst dedicated to transforming complex datasets into clear, actionable insights. I excel in data cleaning, visualization, statistical analysis, and dashboard creation, driving strategic decision-making and contributing to business growth. I am passionate about solving real-world problems and continuously adapting to new technologies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="w-full text-lg text-gray-700 animate-right mt-8"> <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Education</h3>
+                    <div class="space-y-4">
+                        <div class="bg-indigo-50 p-5 rounded-lg shadow-md border-l-4 border-purple-500">
+                            <h4 class="text-xl font-semibold text-gray-800">Master of Computer Science</h4>
+                            <p class="text-gray-700">Central University of Kerala</p>
+                            <p class="text-gray-700">Specialization: Artificial Intelligence</p>
+                            <p class="text-gray-700">Secured: 86.7%</p>
+                            <p class="text-sm text-gray-500 mt-2">Nov 2011 - Aug 2023</p>
+                        </div>
+                        <div class="bg-indigo-50 p-5 rounded-lg shadow-md border-l-4 border-purple-500">
+                            <h4 class="text-xl font-semibold text-gray-800">Bachelor of Computer Application</h4>
+                            <p class="text-gray-700">Sa-adiya Arts and Science College</p>
+                            <p class="text-gray-700">Awarded University: Kannur University</p>
+                            <p class="text-gray-700">Secured: 79%</p>
+                            <p class="text-sm text-gray-500 mt-2">Jun 2008 - Apr 2021</p>
+                        </div>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-indigo-600 mt-8 mb-4">Core Competencies & Tools</h3>
+                    <div class="flex flex-wrap gap-3 p-4 bg-indigo-50 rounded-lg shadow-inner border border-indigo-100">
+                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">Python</span>
+                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">SQL</span>
+                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">Microsoft Excel</span>
+                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">Power BI</span>
+                   	<span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Data Cleaning & Preprocessing</span>
+                        <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Statistical Analysis & Modeling</span>
+                        <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Predictive Analytics</span>
+                        <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Machine Learning Basics</span>
+                        <span class="bg-yellow-100 text-yellow-900 px-4 py-2 rounded-full text-sm font-medium">Data Storytelling & Presentation</span>
+                        <span class="bg-yellow-100 text-yellow-900 px-4 py-2 rounded-full text-sm font-medium">Cross-functional Collaboration</span>
+                        <span class="bg-yellow-100 text-yellow-900 px-4 py-2 rounded-full text-sm font-medium">Problem-Solving & Critical Thinking</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience" class="py-16 px-4 bg-gray-100 shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">Experience</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-indigo-500 animate-left">
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Data Analyst</h3>
+                        <p class="text-lg text-gray-700 mb-4 font-medium">Juzcode | Sep 2023 – May 2025</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Designed and developed interactive dashboards using Power BI to track student progress and course effectiveness.</li>
+                            <li>Performed data cleaning and transformation using Python (Pandas) and SQL for analysis and reporting.</li>
+                            <li>Automated weekly reports and created visual summaries to support data-driven decision-making.</li>
+                            <li>Identified trends in learning outcomes to optimize course content and delivery methods.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-purple-500 animate-right">
+                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">AI & Robotics Trainer</h3>
+                        <p class="text-lg text-gray-700 mb-4 font-medium">Juzcode | July 2024 – May 2025</p>
+                        <ul class="list-disc list-inside text-gray-700 space-y-2">
+                            <li>Conducted training sessions on Artificial Intelligence and Robotics for school students with project-based learning.</li>
+                            <li>Designed lesson plans and customized kits for interactive learning experiences using real-world tools.</li>
+                            <li>Mentored students for AI exhibitions, competitions, and innovation challenges.</li>
+                            <li>Collaborated with schools to integrate AI curriculum aligned with NEP 2020 guidelines.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="py-16 px-4 bg-white shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">My Portfolio</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+                        <img src="8ca233da-9117-4b2b-956d-bc234a0c832b.jpg" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex-grow"> <h3 class="text-xl font-semibold text-indigo-700 mb-2">Alzheimer's Disease Detection and Classification</h3>
+                                <p class="text-gray-600 text-sm mb-3">Tools: Python (TensorFlow, Keras), VGG-16, ResNet50, EfficientNetB1</p>
+                                <p class="text-gray-700 mb-4">Classified Alzheimer's disease using brain imaging, leveraging transfer learning with VGG-16, ResNet50, and EfficientNetB1 to achieve high detection accuracy.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Deep Learning</span>
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/shamna14248/Alzheimer-s-disease-classification" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center mt-auto">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+                        <img src="Billdu_Sales-Projections-and-Forecasting-methods.jpg" alt="Sales Prediction Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex-grow"> <h3 class="text-xl font-semibold text-indigo-700 mb-2">Sales Prediction</h3>
+                                <p class="text-gray-600 text-sm mb-3">Tools: Python (XGBoost Regressor), Pandas, NumPy</p>
+                                <p class="text-gray-700 mb-4">Predicted sales for Bigmart stores using historical data, employing XGBoost Regressor for robust and accurate sales predictions, demonstrating proficiency in advanced regression techniques.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Predictive Analytics</span>
+                                    <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/shamna14248/Sales-Prediction" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center mt-auto">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+                        <img src="images.jpeg" alt="Covid-19 Analysis Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex-grow"> <h3 class="text-xl font-semibold text-indigo-700 mb-2">Covid-19 Analysis</h3>
+                                <p class="text-gray-600 text-sm mb-3">Tools: Python (Pandas, Matplotlib, Seaborn), Excel</p>
+                                <p class="text-gray-700 mb-4">Analyzed the link between COVID-19 infection rates and happiness factors by cleaning, merging datasets, calculating infection rates, and performing correlation analysis with visualizations.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Data Analysis</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Data Visualization</span>
+                                    <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/shamna14248/Covid-19-Analysis" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline flex items-center mt-auto">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+                        <img src="65276fb3a7f179ec309ef7ab_At-Work-feature-image.png" alt="ABC Company Employee Data Analysis Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex-grow"> <h3 class="text-xl font-semibold text-indigo-700 mb-2">ABC Company Employee Data Analysis</h3>
+                                <p class="text-gray-600 text-sm mb-3">Tools: Python (Pandas, Matplotlib, Seaborn, NumPy)</p>
+                                <p class="text-gray-700 mb-4">This project analyzes employee data from ABC Company to provide insights on team distribution, position segregation, salary expenditure, age trends, and correlations, helping the company understand its workforce better.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-red-100 text-red-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Data Analysis</span>
+                                    <span class="bg-green-100 text-green-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Data Visualization</span>
+                                    <span class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                                    <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Pandas</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/shamna14248/Python-ABC-Company" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center mt-auto">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
+                        <img src="Price-Prediction-in-Online-Car-Marketplaces-1024x576.png" alt="Car Price Prediction Project" class="w-full h-48 object-cover">
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="flex-grow"> <h3 class="text-xl font-semibold text-indigo-700 mb-2">Car Price Prediction</h3>
+                                <p class="text-gray-600 text-sm mb-3">Tools: Python (Pandas, Scikit-learn), Linear Regression, Decision Tree, Random Forest, Gradient Boosting, SVR</p>
+                                <p class="text-gray-700 mb-4">This project builds regression models to predict car prices based on various features, helping an automobile company understand factors influencing pricing in the US market.</p>
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="bg-teal-100 text-teal-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Machine Learning</span>
+                                    <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Regression</span>
+                                    <span class="bg-indigo-100 text-indigo-800 text-xs font-semibold px-2.5 py-0.5 rounded-full">Python</span>
+                                </div>
+                            </div>
+                            <a href="https://github.com/shamna14248/CarPrice" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:text-indigo-800 font-medium flex items-center mt-auto">
+                                View Project <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-16 px-4 bg-gray-50 shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">Get in Touch</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                        <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Email</h3>
+                        <a href="mailto:fathimathshamna8@gmail.com" class="text-indigo-600 hover:underline">fathimathshamna8@gmail.com</a>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                        <svg class="w-12 h-12 text-indigo-500 mb-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" clip-rule="evenodd"></path></svg>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/fathimath-shamna/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Fathimath Shamna</a>
+                    </div>
+                    <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl">
+                        <svg class="w-12 h-12 text-indigo-500 mb-4" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.29 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-gray-800 mb-2">GitHub</h3>
+                        <a href="https://github.com/shamna14248" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">shamna14248</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 text-center text-sm">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="current-year"></span> Fathimath Shamna. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <button onclick="scrollToTop()" id="scrollTopBtn">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
+    </button>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Scroll-to-top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Show/hide scroll-to-top button
+        window.addEventListener('scroll', () => {
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            if (window.scrollY > 300) {
+                scrollTopBtn.style.display = 'block';
+            } else {
+                scrollTopBtn.style.display = 'none';
+            }
+
+            // Highlight active nav link on scroll
+            const sections = document.querySelectorAll('section[id]');
+            const navLinks = document.querySelectorAll('.nav-link');
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - document.querySelector('header').offsetHeight;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('nav-link-active');
+                if (link.href.includes(current)) {
+                    link.classList.add('nav-link-active');
+                }
+            });
+        });
+
+        // Add animations on scroll using Intersection Observer
+        const elementsToAnimate = document.querySelectorAll('.animate-left, .animate-right, .animate-fade');
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1'; // Ensure opacity is set for animation
+                    // The animation classes are already applied in the CSS,
+                    // just triggering visibility or initial state change
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1 // Adjust as needed
+        });
+
+        elementsToAnimate.forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>
