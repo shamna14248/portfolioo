@@ -1,204 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fathimath Shamna - Professional Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        /* Custom font for Inter and Poppins */
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;600;700;800&display=swap');
-
-        body {
-            font-family: 'Inter', sans-serif;
-            color: #2d3748; /* Darker gray for better readability */
-            line-height: 1.6;
-        }
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-        }
-
-        /* Smooth scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Custom Animations */
-        @keyframes slideInFromLeft {
-            0% { transform: translateX(-100%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideInFromRight {
-            0% { transform: translateX(100%); opacity: 0; }
-            100% { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        .animate-left { animation: slideInFromLeft 0.8s ease-out forwards; }
-        .animate-right { animation: slideInFromRight 0.8s ease-out forwards; }
-        .animate-fade { animation: fadeIn 1s ease-out forwards; }
-
-        /* Navigation active link styling */
-        .nav-link-active {
-            color: #6366f1; /* Tailwind indigo-500 */
-            border-bottom: 2px solid #6366f1;
-            font-weight: 600;
-        }
-
-        /* Scroll-to-top button */
-        #scrollTopBtn {
-            display: none;
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            background-color: #6366f1;
-            color: white;
-            padding: 0.75rem 1rem;
-            border-radius: 9999px; /* Fully rounded */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            cursor: pointer;
-            border: none;
-            outline: none;
-        }
-        #scrollTopBtn:hover {
-            background-color: #4f46e5;
-            transform: translateY(-3px);
-        }
-    </style>
-</head>
-<body class="bg-gray-50">
-
-    <header class="bg-white shadow-md fixed w-full z-50 py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-indigo-700 hover:text-purple-700 transition duration-300">Fathimath Shamna</a>
-            <nav class="hidden md:flex space-x-6">
-                <a href="#hero" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Home</a>
-                <a href="#about" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">About</a>
-                <a href="#experience" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Experience</a>
-                <a href="#portfolio" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Portfolio</a>
-                <a href="#contact" class="text-gray-600 hover:text-indigo-700 transition duration-300 py-2 nav-link">Contact</a>
-                </nav>
-            <button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-indigo-700 focus:outline-none">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg py-2 mt-2">
-            <a href="#hero" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Home</a>
-            <a href="#about" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">About</a>
-            <a href="#experience" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Experience</a>
-            <a href="#portfolio" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Portfolio</a>
-            <a href="#contact" class="block px-4 py-2 text-gray-800 hover:bg-gray-100">Contact</a>
-             </div>
-    </header>
-
-    <main class="pt-20"> 
-        <section id="hero" class="relative bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20 px-4 min-h-[calc(100vh-5rem)] flex items-center justify-center">
-            <div class="container mx-auto text-center z-10 relative">
-                <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-4 animate-fade" style="animation-delay: 0.2s;">
-                    Hi, I'm <span class="text-yellow-300">Fathimath Shamna</span>
-                </h1>
-                <p class="text-xl md:text-2xl mb-8 animate-fade" style="animation-delay: 0.5s;">
-                    A Data Analyst passionate about uncovering insights and driving impactful decisions.
-                </p>
-                <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade" style="animation-delay: 0.8s;">
-                    <a href="#portfolio" class="bg-white text-indigo-700 px-8 py-3 rounded-full text-lg font-semibold shadow-lg hover:bg-indigo-100 transition duration-300 transform hover:scale-105">
-                        View My Work
-                    </a>
-                    <a href="#contact" class="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-700 transition duration-300 transform hover:scale-105">
-                        Get In Touch
-                    </a>
-                </div>
-            </div>
-            <div class="absolute inset-0 bg-pattern opacity-10"></div>
-            <svg class="absolute bottom-0 left-0 w-full h-auto text-white opacity-20" viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
-                <path fill="currentColor" fill-opacity="1" d="M0,160L48,176C96,192,192,224,288,224C384,224,480,192,576,176C672,160,768,160,864,170.7C960,181,1056,203,1152,192C1248,181,1344,139,1392,117.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </section>
-
-        <section id="about" class="py-16 px-4 bg-white shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">About Me</h2>
-                <div class="flex flex-col items-center gap-10 text-center"> 
-                    <div class="w-full flex flex-col items-center animate-left">
-                        <img src="Shamna.PNG" alt="Fathimath Shamna Profile" class="rounded-full w-64 h-64 object-cover shadow-xl border-4 border-indigo-200 mb-8"> 
-                        <p class="mb-12 bg-indigo-50 p-5 rounded-lg shadow-inner border border-indigo-100 text-lg text-gray-700 max-w-3xl"> 
-                            Hello! I'm Fathimath Shamna, a results-oriented Data Analyst dedicated to transforming complex datasets into clear, actionable insights. I excel in data cleaning, visualization, statistical analysis, and dashboard creation, driving strategic decision-making and contributing to business growth. I am passionate about solving real-world problems and continuously adapting to new technologies.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="w-full text-lg text-gray-700 animate-right mt-8"> 
-                    <h3 class="text-2xl font-semibold text-indigo-600 mb-4">Education</h3>
-                    <div class="space-y-4">
-                        <div class="bg-indigo-50 p-5 rounded-lg shadow-md border-l-4 border-purple-500">
-                            <h4 class="text-xl font-semibold text-gray-800">Master of Computer Science</h4>
-                            <p class="text-gray-700">Central University of Kerala</p>
-                            <p class="text-gray-700">Specialization: Artificial Intelligence</p>
-                            <p class="text-gray-700">Secured: 86.7%</p>
-                            <p class="text-sm text-gray-500 mt-2">Nov 2021 - Aug 2023</p>
-                        </div>
-                        <div class="bg-indigo-50 p-5 rounded-lg shadow-md border-l-4 border-purple-500">
-                            <h4 class="text-xl font-semibold text-gray-800">Bachelor of Computer Application</h4>
-                            <p class="text-gray-700">Sa-adiya Arts and Science College</p>
-                            <p class="text-gray-700">Awarded University: Kannur University</p>
-                            <p class="text-gray-700">Secured: 79%</p>
-                            <p class="text-sm text-gray-500 mt-2">Jun 2018 - Apr 2021</p>
-                        </div>
-                    </div>
-
-                    <h3 class="text-2xl font-semibold text-indigo-600 mt-8 mb-4">Core Competencies & Tools</h3>
-                    <div class="flex flex-wrap gap-3 p-4 bg-indigo-50 rounded-lg shadow-inner border border-indigo-100">
-                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">Python</span>
-                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">SQL</span>
-                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">Microsoft Excel</span>
-                        <span class="bg-indigo-200 text-indigo-900 px-4 py-2 rounded-full text-sm font-medium">Power BI</span>
-                   	    <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Data Cleaning & Preprocessing</span>
-                        <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Statistical Analysis & Modeling</span>
-                        <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Predictive Analytics</span>
-                        <span class="bg-purple-200 text-purple-900 px-4 py-2 rounded-full text-sm font-medium">Machine Learning Basics</span>
-                        <span class="bg-yellow-100 text-yellow-900 px-4 py-2 rounded-full text-sm font-medium">Data Storytelling & Presentation</span>
-                        <span class="bg-yellow-100 text-yellow-900 px-4 py-2 rounded-full text-sm font-medium">Cross-functional Collaboration</span>
-                        <span class="bg-yellow-100 text-yellow-900 px-4 py-2 rounded-full text-sm font-medium">Problem-Solving & Critical Thinking</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="experience" class="py-16 px-4 bg-gray-100 shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
-            <div class="container mx-auto">
-                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">Experience</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-indigo-500 animate-left">
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">Data Analyst</h3>
-                        <p class="text-lg text-gray-700 mb-4 font-medium">Juzcode | Sep 2023 – Aug 2025</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Designed and developed interactive dashboards using Power BI to track student progress and course effectiveness.</li>
-                            <li>Performed data cleaning and transformation using Python and SQL for analysis and reporting.</li>
-                            <li>Automated weekly reports and created visual summaries to support data-driven decision-making.</li>
-                            <li>Identified trends in learning outcomes to optimize course content and delivery methods.</li>
-                        </ul>
-                    </div>
-                    <div class="bg-white p-8 rounded-lg shadow-md border-t-4 border-purple-500 animate-right">
-                        <h3 class="text-2xl font-semibold text-indigo-700 mb-2">AI & Robotics Trainer</h3>
-                        <p class="text-lg text-gray-700 mb-4 font-medium">Juzcode | July 2024 – Mar 2025</p>
-                        <ul class="list-disc list-inside text-gray-700 space-y-2">
-                            <li>Conducted training sessions on Artificial Intelligence and Robotics for school students with project-based learning.</li>
-                            <li>Designed lesson plans and customized kits for interactive learning experiences using real-world tools.</li>
-                            <li>Mentored students for AI exhibitions, competitions, and innovation challenges.</li>
-                            <li>Collaborated with schools to integrate AI curriculum aligned with NEP 2020 guidelines.</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="portfolio" class="py-16 px-4 bg-white shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
+<section id="portfolio" class="py-16 px-4 bg-white shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
             <div class="container mx-auto">
                 <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">Data Projects Portfolio</h2>
 
@@ -206,7 +6,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                     
                     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
-                        <img src="placeholder-sales-dashboard.jpg" alt="Sales and Profit Performance Dashboard" class="w-full h-48 object-cover">
+                        <img src="Sales and Profit.jpg" alt="Sales and Profit Performance Dashboard" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <div class="flex-grow">
                                 <h3 class="text-xl font-semibold text-indigo-700 mb-2">Sales and Profit Performance Dashboard</h3>
@@ -225,7 +25,7 @@
                     </div>
 
                     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
-                        <img src="placeholder-customer-seg.jpg" alt="Customer Shopping Behavior Analysis Project" class="w-full h-48 object-cover">
+                        <img src="Customer shopping behavior.png" alt="Customer Shopping Behavior Analysis Project" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <div class="flex-grow">
                                 <h3 class="text-xl font-semibold text-indigo-700 mb-2">Customer Shopping behaviour Analysis</h3>
@@ -244,7 +44,7 @@
                     </div>
 
                     <div class="bg-gray-50 rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
-                        <img src="covid_analysis_placeholder.jpg" alt="Covid-19 Analysis Project" class="w-full h-48 object-cover">
+                        <img src="Covide 19.jpg" alt="Covid-19 Analysis Project" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow">
                             <div class="flex-grow"> 
                                 <h3 class="text-xl font-semibold text-indigo-700 mb-2">Covid-19 Analysis</h3>
@@ -347,7 +147,7 @@
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     
                     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
-                        <img src="recipe-realm-mobile-ui.jpg" alt="RecipeRealm Mobile App UI/UX" class="w-full h-48 object-cover">
+                        <img src="RecipeRealm.png" alt="RecipeRealm Mobile App UI/UX" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow"> 
                             <div class="flex-grow"> 
                                 <h3 class="text-xl font-semibold text-indigo-700 mb-2">RecipeRealm Mobile App UI/UX</h3>
@@ -366,7 +166,7 @@
                     </div>
                     
                     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
-                        <img src="https://via.placeholder.com/600x400/a855f7/ffffff?text=Forge+Platform+UI+Mockup" alt="Forge Platform Design" class="w-full h-48 object-cover">
+                        <img src="Forge.png" alt="Forge Platform Design" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow"> 
                             <div class="flex-grow"> 
                                 <h3 class="text-xl font-semibold text-indigo-700 mb-2">Forge Platform UI/UX</h3>
@@ -385,7 +185,7 @@
                     </div>
 
                     <div class="bg-white rounded-lg shadow-md overflow-hidden transform transition duration-300 hover:scale-105 hover:shadow-xl flex flex-col">
-                        <img src="food-on-rail-ui.jpg" alt="FOODONRAIL Ordering App UI" class="w-full h-48 object-cover">
+                        <img src="FoodonRail.png" alt="FOODONRAIL Ordering App UI" class="w-full h-48 object-cover">
                         <div class="p-6 flex flex-col flex-grow"> 
                             <div class="flex-grow"> 
                                 <h3 class="text-xl font-semibold text-indigo-700 mb-2">FOODONRAIL Ordering App UI</h3>
@@ -405,126 +205,3 @@
                 </div>
             </div>
         </section>
-
-
-        <section id="contact" class="py-16 px-4 bg-gray-50 shadow-lg rounded-lg mx-auto my-12 max-w-6xl animate-fade">
-            <div class="container mx-auto text-center">
-                <h2 class="text-4xl font-bold text-center text-indigo-700 mb-12">Get in Touch</h2>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">Email</h3>
-                        <a href="mailto:fathimathshamna8@gmail.com" class="text-indigo-600 hover:underline">fathimathshamna8@gmail.com</a>
-                    </div>
-                    <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM7 9H3v12h4zM5 5.25A1.75 1.75 0 116.75 7 1.75 1.75 0 015 5.25z"/>
-                        </svg>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">LinkedIn</h3>
-                        <a href="https://www.linkedin.com/in/fathimath-shamna/" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">Fathimath Shamna</a>
-                    </div>
-                    <div class="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-200 transform transition duration-300 hover:scale-105 hover:shadow-xl">
-                        <svg class="w-12 h-12 text-indigo-500 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
-                        </svg>
-                        <h3 class="text-xl font-semibold text-gray-800 mb-2">GitHub</h3>
-                        <a href="https://github.com/shamna14248" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">shamna14248</a>
-                    </div>
-                </div>
-                <p class="mt-8 text-gray-600">
-                    I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
-                </p>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-800 text-white py-6">
-        <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2025 Fathimath Shamna. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <button id="scrollTopBtn" onclick="scrollToTop()">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path></svg>
-    </button>
-
-
-    <script>
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-        });
-
-        // Close mobile menu when a link is clicked
-        mobileMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-            });
-        });
-
-        // Scroll-to-top function
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
-
-        // Show/hide scroll-to-top button
-        window.addEventListener('scroll', () => {
-            const scrollTopBtn = document.getElementById('scrollTopBtn');
-            if (window.scrollY > 300) {
-                scrollTopBtn.style.display = 'block';
-            } else {
-                scrollTopBtn.style.display = 'none';
-            }
-
-            // Highlight active nav link on scroll
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-link');
-            let current = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 80; // Adjust for fixed header
-                const sectionBottom = sectionTop + section.offsetHeight;
-                const pageYOffset = window.pageYOffset;
-
-                // Only consider sections that are in the navigation (not #design)
-                if (section.id !== 'design' && pageYOffset >= sectionTop && pageYOffset < sectionBottom) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            // Apply active class to the corresponding navigation link
-            navLinks.forEach(link => {
-                link.classList.remove('nav-link-active');
-                if (link.href.includes(current)) {
-                    link.classList.add('nav-link-active');
-                }
-            });
-        });
-
-        // Add animations on scroll using Intersection Observer
-        const elementsToAnimate = document.querySelectorAll('.animate-left, .animate-right, .animate-fade');
-
-        const observer = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1'; // Ensure opacity is set for animation
-                    // The animation classes are already applied in the CSS,
-                    // just triggering visibility or initial state change
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1 // Adjust as needed
-        });
-
-        elementsToAnimate.forEach(element => {
-            observer.observe(element);
-        });
-    </script>
-
-</body>
-</html>
-
